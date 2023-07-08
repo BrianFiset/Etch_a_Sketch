@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.etch-container {
+    margin: auto;
+    border: 1px solid black;
+    height: 600px;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.item-line {
+    flex: 1 1 auto;
+    display: flex;
+}
+
+.item {
+    flex: 1 1 auto;
+}
+
+.item:hover {
+    background-color: black;
+}
