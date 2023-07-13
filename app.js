@@ -24,5 +24,27 @@ function createGrid(number){
 
 createGrid(16)
 
-// create function that can make grid squares
-// to line them up 
+const gridItem = document.querySelectorAll('.item');
+let mouseDown = false;
+
+gridItem.forEach(item => item.addEventListener('mousedown', (e) => {
+    changeColor(e)
+    mouseDown = true;
+    itemHover()
+}));
+
+gridItem.forEach(item => item.addEventListener('mouseup', () => {
+    mouseDown = false;
+    itemHover()
+}));
+
+function itemHover() {
+    if (mouseDown === true) {
+        gridItem.forEach(item => item.addEventListener('mouseover', changeColor));
+    } else if (mouseDown === false) {
+        gridItem.forEach(item => item.removeEventListener('mouseover',changeColor));
+    };
+}
+function changeColor(event) {
+    event.target.style = `background-color: black;`
+};
