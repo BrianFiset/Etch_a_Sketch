@@ -8,6 +8,17 @@
 </head>
 <body>
     <div class="title">Etch a Sketch</div>
+    <div class="options">
+        <input type="range"  class="grid-size" name="grid-size" max="100" min="1" value="16">
+        <label for="grid-size" class="grid-size-text">16x16</label>
+        <div class="colors">
+            <div class="text">Colors</div>
+            <select name="color" id="colors">
+                <option value="black">Black</option>
+                <option value="random">Random</option>
+            </select>
+        </div>
+    </div>
     <div class="etch-container"></div>
     <script src="app.js"></script>
 </body>
