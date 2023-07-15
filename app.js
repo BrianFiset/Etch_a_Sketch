@@ -49,10 +49,6 @@ function coloringGrid(){
         mouseDown = false;
         itemHover(gridItem);
     }));
-    container.addEventListener('mouseleave', () => {
-        mouseDown = false;
-        itemHover(gridItem);
-    });
 }
 
 function itemHover(gridItem) {
@@ -73,6 +69,8 @@ function changeColor(event) {
         event.target.style = `background-color: ${randomColor()};`
     } else if(color === 'black') {
         event.target.style = `background-color: black;`
+    } else if(color === 'white') {
+        event.target.style = `background-color: white;`
     }
 };
 
