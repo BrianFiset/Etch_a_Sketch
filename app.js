@@ -4,6 +4,7 @@ const gridSizeText = document.querySelector('.grid-size-text');
 let mouseDown = false;
 let color = 'black';
 const selectColor = document.querySelector('#colors');
+const clearBtn = document.querySelector('.clear');
 
 function createGridItems(element){
     const container = document.querySelector(element);
@@ -114,3 +115,7 @@ function startColoring(event){
     progressiveColoring(event);
     changeColor(event); 
 };
+
+clearBtn.addEventListener('click', () =>{
+    createGrid(gridSize.value);
+})

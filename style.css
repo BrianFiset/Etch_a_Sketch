@@ -48,7 +48,7 @@ body {
 .options {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 24px;
     font-size: 16px;
     background-color: rgb(182, 239, 241);
     padding: 16px;
@@ -56,4 +56,19 @@ body {
     border: solid 2px black;
     color: rgb(17, 92, 246);
     font-weight: 500;
+    flex-shrink: 0;
+}
+
+.clear {
+    align-self: center;
+    padding: 8px 16px;
+    background-color: rgb(17, 92, 246);
+    color: honeydew;
+    border-radius: 8px;
+}
+
+.clear:hover {
+    cursor: pointer;
+    background-color: aqua;
+    color: black;
 }
