@@ -4,14 +4,21 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Victor Mono', monospace;
+    background-color: rgb(37, 209, 170);
+    color: honeydew;
+}
+
 .etch-container {
-    margin: auto;
     border: 1px solid black;
     height: 600px;
     width: 600px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    background-color: white;
+    flex-shrink: 0;
 }
 
 .item-line {
@@ -24,3 +31,29 @@
     border: solid 1px black;
 }
 
+.title {
+    text-align: center;
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.container {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    margin-top: 24px;
+    margin-right: 15%;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-size: 16px;
+    background-color: rgb(182, 239, 241);
+    padding: 16px;
+    border-radius: 16px;
+    border: solid 2px black;
+    color: rgb(17, 92, 246);
+    font-weight: 500;
+}

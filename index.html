@@ -5,26 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch a Sketch</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Victor+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="title">Etch a Sketch</div>
-    <div class="options">
-        <input type="range"  class="grid-size" name="grid-size" max="100" min="1" value="16">
-        <label for="grid-size" class="grid-size-text">16x16</label>
-        <div class="colors">
-            <div class="text">Colors</div>
-            <select name="color" id="colors">
-                <option value="black">Black</option>
-                <option value="random">Random</option>
-                <option value="white">White</option>
-            </select>
+    <div class="container">
+        <div class="options">
+            <div class="grid-size-container">
+                <div class="text">Grid Size</div>
+                <input type="range"  class="grid-size" name="grid-size" max="100" min="1" value="16">
+                <label for="grid-size" class="grid-size-text">16x16</label>
+            </div>
+            <div class="colors">
+                <div class="text">Colors</div>
+                <select name="color" id="colors">
+                    <option value="black">Black</option>
+                    <option value="random">Random</option>
+                    <option value="white">White</option>
+                </select>
+            </div>
             <div class="color-darkening">
                 <div class="text">Progressive Coloring</div>
                 <input type="checkbox" name="progressive-coloring" class="progressive-coloring">
             </div>
         </div>
+        <div class="etch-container"></div>
     </div>
-    <div class="etch-container"></div>
     <script src="app.js"></script>
 </body>
 </html>
