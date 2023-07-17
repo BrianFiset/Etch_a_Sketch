@@ -40,7 +40,7 @@ createGrid(16);
 function coloringGrid(){
     const gridItem = document.querySelectorAll('.item');
     gridItem.forEach(item => item.addEventListener('mousedown', (e) => {
-        changeColor(e);
+        startColoring(e);
         mouseDown = true;
         itemHover(gridItem);
     }));
@@ -53,9 +53,9 @@ function coloringGrid(){
 
 function itemHover(gridItem) {
     if (mouseDown === true) {
-        gridItem.forEach(item => item.addEventListener('mouseover', changeColor));
+        gridItem.forEach(item => item.addEventListener('mouseover', startColoring));
     } else if (mouseDown === false) {
-        gridItem.forEach(item => item.removeEventListener('mouseover',changeColor));
+        gridItem.forEach(item => item.removeEventListener('mouseover',startColoring));
     };
 }
 
@@ -66,11 +66,11 @@ function randomColor() {
 
 function changeColor(event) {
     if(color === 'random') {
-        event.target.style = `background-color: ${randomColor()};`
+        event.target.style.backgroundColor = randomColor()
     } else if(color === 'black') {
-        event.target.style = `background-color: black;`
+        event.target.style.backgroundColor = `black`
     } else if(color === 'white') {
-        event.target.style = `background-color: white;`
+        event.target.style.backgroundColor = `white`
     }
 };
 
@@ -87,3 +87,30 @@ function changeText(content, text){
 selectColor.addEventListener('change', () => {
     color = selectColor.value;
 });
+
+// if element is checked
+// make colors slowly add 10% opacity 
+// if not checked work as normal
+function progressiveColoring(event) {
+    const progressiveColoring = document.querySelector('.progressive-coloring');
+        if(progressiveColoring.checked === true) {
+            for(let i = 1; i < 10; i++){
+                if(!event.target.style.opacity){
+                    event.target.style.opacity = `0.1`;
+                    break
+                } else if(`${i / 10}` === event.target.style.opacity) {
+                    let value = i / 10 + 0.1;
+                    event.target.style.opacity = `${value}`;
+                    break
+                };
+            };
+        } else {
+            event.target.style.removeProperty('opacity');
+
+        };
+};
+
+function startColoring(event){
+    progressiveColoring(event);
+    changeColor(event); 
+};
